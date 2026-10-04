@@ -1,2 +1,72 @@
-/.venv/
-/models/
+# --- Python / uv ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# --- Tooling caches ---
+.pytest_cache/
+.ruff_cache/
+.ty_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# --- Secrets / local env ---
+.env
+.env.*
+!.env.example
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# ============================================================
+# Data and weights: present on disk, never committed.
+# Regenerate with `uv run web-attack-detector-build-dataset`.
+# See data/README.md for provenance of every file.
+# ============================================================
+# `/**` (contents) rather than `/` (directory), so the .gitkeep placeholders
+# below can be re-included -- git cannot re-include a file whose parent
+# directory is itself excluded.
+data/raw/**
+data/interim/**
+data/processed/**
+data/external/**
+data/legacy/**
+!data/**/.gitkeep
+models/*
+!models/.gitkeep
+
+# Large binaries anywhere in the tree.
+*.pth
+*.pt
+*.keras
+*.h5
+*.joblib
+*.pkl
+*.npy
+*.npz
+*.ckpt
+*.safetensors
+*.onnx
+
+# Datasets.
+*.csv
+*.tsv
+*.parquet
+*.json.gz
+datasets.zip
+
+# Whole-file artefacts.
+*.ckpt-*
