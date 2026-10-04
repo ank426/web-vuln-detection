@@ -1,8 +1,0 @@
-torch
-transformers
-beautifulsoup4
-scikit-learn
-pandas
-numpy
-streamlit
-plotly
